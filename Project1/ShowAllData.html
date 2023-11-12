@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Information</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let students = [
+                [12345678, "A1b2C3d4", false, "Alice Johnson", "Senior", true, "ProjectorSuite", "711,712","Double", 20, 1],
+                [87654321, "E5f6G7h8", true, "Bob Smith", "Senior", true, "ArtSuite", "711,712","Single", 18, 2],
+                [11223344, "I9j0K1l2", false, "Charlie Brown", "Junior", true, "VideoGameSuite", "711,712","Double", 19, 1],
+                [22334455, "M3n4O5p6", true, "Daisy Ridley", "Junior", false, "BoardGameSuite", "711,712","Single", 17, 2],
+                [33445566, "Q7r8S9t0", false, "Edward Stone", "Senior", false, "ProjectorSuite", "711,712","Double", 15, 1],
+                [44556677, "U1v2W3x4", true, "Fiona Green", "Sophomore", true, "ArtSuite", "711,712","Single", 14, 0],
+                [55667788, "Y5z6A7b8", false, "George Lucas", "Freshman", false, "VideoGameSuite", "711,712","Double", 10, 3],
+                [66778899, "C9d0E1f2", true, "Hannah Abbot", "Sophomore", false, "BoardGameSuite", "711,712","Single", 11, 0],
+                [77889900, "G3h4I5j6", false, "Ian McKellen", "Senior", true, "ProjectorSuite", "711,712","Single", 20, 1],
+                [88990011, "K7l8M9n0", true, "Julia Roberts", "Junior", false, "ArtSuite","711,712", "Double", 18, 0],
+                [99001122, "O1p2Q3r4", true, "Kevin Costner", "Sophomore", true, "VideoGameSuite", "711,712","Single", 16, 2],
+                [10012233, "R5s6T7u8", false, "Lily Evans", "Senior", false, "BoardGameSuite", "711,712","Double", 20, 0],
+                [21123344, "V9w0X1y2", true, "Michael Scott", "Senior", true, "ProjectorSuite", "711,712","Single", 15, 3],
+                [32234455, "Z3a4B5c6", false, "Nina Dobrev", "Junior", false, "ArtSuite", "711,712","Double", 19, 1],
+                [43345566, "D7e8F9g0", true, "Oscar Wilde", "Sophomore", true, "VideoGameSuite", "711,712","Single", 17, 0],
+                [54456677, "H1i2J3k4", false, "Obama Pres", "Senior", false, "BoardGameSuite","711,712", "Double", 18, 1],
+                [65567788, "L5m6N7o8", true, "Adoft Himmer", "Senior", true, "ProjectorSuite", "711,712","Single", 16, 2],
+                [76678899, "P9q0R1s2", true, "Rachel Berry", "Junior", true, "ArtSuite", "711,712","Double", 15, 1],
+                [87789900, "T3u4V5w6", false, "Steven Spielberg", "Sophomore", false, "VideoGameSuite","711,712", "Single", 13, 0],
+                [98890011, "X7y8Z9a0", true, "Tilda Swinton", "Senior", false, "BoardGameSuite", "711,712", "Double", 20, 0],
+                [10990122, "B1c2D3e4", false, "Ursula Le Guin", "Senior", true, "ProjectorSuite", "711,712","Single", 19, 1],
+                [21091233, "F5g6H7i8", true, "Vincent Vega", "Junior", false, "ArtSuite", "711,712","Double", 15, 0],
+                [32192344, "J9k0L1m2", true, "Walter White", "Sophomore", true, "VideoGameSuite", "711,712","Single", 12, 1],
+                [43293455, "N3o4P5q6", false, "Xenia Onatopp", "Freshman", false, "BoardGameSuite", "711,712","Double", 11, 2]
+            ];
+
+
+            let tableBody = document.querySelector(".containerOfAllData tbody");
+
+            // Clear the existing rows
+            tableBody.innerHTML = '';
+
+            for (let student of students) {
+                let row = document.createElement('tr');
+
+                for (let attribute of student) {
+                    let cell = document.createElement('td');
+                    if (typeof attribute === "boolean") {
+                        cell.innerText = attribute ? "True" : "False";
+                    } else {
+                        cell.innerText = attribute;
+                    }
+                    row.appendChild(cell);
+                }
+                tableBody.appendChild(row);
+            }
+        });
+    </script>
+    <body>
+<table class="containerOfAllData">
+    <thead>
+
+    </tbody>
+</table>
+
+</body>
+</html>
+</head>
+<body>
+<table class="containerOfAllData">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Password</th>
+            <th>Is Admin</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Is Eboard</th>
+            <th>Suite Pref</th>
+            <th>Rooms Pref</th>
+            <th>Room Type</th>
+            <th>Points</th>
+            <th>No. of Strikes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>12345678</td>
+            <td>A1b2C3d4</td>
+            <td>False</td>
+            <td>Alice Johnson</td>
+            <td>Senior</td>
+            <td>True</td>
+            <td>ProjectorSuite</td>
+            <td>711,712</td>
+            <td>Double</td>
+            <td>20</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>87654321</td>
+            <td>B2c3D4e5</td>
+            <td>True</td>
+            <td>Bob Smith</td>
+            <td>Senior</td>
+            <td>True</td>
+            <td>ArtSuite</td>
+            <td>722,721</td>
+            <td>Single</td>
+            <td>18</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>23456789</td>
+            <td>C3d4E5f6</td>
+            <td>False</td>
+            <td>Charlie Brown</td>
+            <td>Junior</td>
+            <td>True</td>
+            <td>VideoGameSuite</td>
+            <td>733,732</td>
+            <td>Double</td>
+            <td>19</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>98765432</td>
+            <td>D4e5F6g7</td>
+            <td>True</td>
+            <td>Daisy Ridley</td>
+            <td>Junior</td>
+            <td>False</td>
+            <td>BoardGameSuite</td>
+            <td>742,741</td>
+            <td>Single</td>
+            <td>17</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>34567890</td>
+            <td>E5f6G7h8</td>
+            <td>False</td>
+            <td>Edward Stone</td>
+            <td>Senior</td>
+            <td>False</td>
+            <td>ProjectorSuite</td>
+            <td>713,714</td>
+            <td>Double</td>
+            <td>15</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
