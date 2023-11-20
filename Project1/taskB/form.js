@@ -60,7 +60,7 @@ const submitHousingEntry = (event) => {
 const signOut = (event) => {
     event.preventDefault();  
     console.log("Signing Out");
-    window.location.href = "index.php";
+    window.location.href = "signout.php";
 }
 
 const deleteHousingEntry = (event) => {
@@ -77,4 +77,10 @@ const goToUpdate = (event) => {
     event.preventDefault();  
     console.log("Signing Out");
     window.location.href = "Update.html";
+}
+
+const goToCreate = (event) => {
+    event.preventDefault();
+    console.log("Going to default");
+    window.location.href = "Create.html";
 }

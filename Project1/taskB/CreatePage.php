@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
+    <?php
+      session_start();
+      if (!isset($_SESSION['is_logged_in'])) {
+        header("Location: index.php");
+        exit();
+      }
+  
+    $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'];
+    include 'navbar.php';
+    ?>
     <div class="container-shadow"></div>
     <div class="container">
       <div class="wrap">
@@ -14,7 +24,7 @@
           <span class="headings">Create Housing Entry</span>
         </div>
         <div id="create-housing-entry-container">
-          <form id="create-housing-entry-form" onsubmit="submitHousingEntry(event);">
+          <form id="create-housing-entry-form" method="post" action="create.php">
             <label for="year">Year</label>
             <select id="year" name="year" required>
               <option value="Freshman">Freshman</option>

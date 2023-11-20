@@ -15,16 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ID = $conn->real_escape_string($_POST['schoolID']);
         $Password = $conn->real_escape_string($_POST['password']);
 
-        // Query to check the existence of user
         $query = "SELECT * FROM Students WHERE ID = '$ID' AND Password = '$Password'";
         $result = $conn->query($query);
 
         if ($result && $result->num_rows > 0) {
-            // echo "<h2>Login Successful</h2>";
-            header("Location: Create.html");
+            $user = $result->fetch_assoc();
+            $_SESSION['user_id'] = $user['ID'];
+            $_SESSION['is_logged_in'] = true;
+            $_SESSION['is_admin'] = $user['isAdmin'];
+
+            header("Location: dashboard.php");
             exit();
         } else {
-            // echo "<h2>Login Failed</h2>";
+            $_SESSION['error'] = "Access Denied: You must be an admin to log in.";
             header("Location: index.php");
             exit();
         }
@@ -38,17 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insert new user data into the database
         $insertQuery = "INSERT INTO Students (ID, Name, Password) VALUES ('$ID', '$Name', '$Password')";
         if ($conn->query($insertQuery) === TRUE) {
-            // echo "<h2>Account Created Successfully</h2>";
             header("Location: index.php");
             exit();
         } else {
-            // echo "<h2>Error: " . $conn->error . "</h2>";
-            header("Location: index.php");
+            $_SESSION['error'] = "Error: " . $conn->error;
+            header("Location: index.php"); 
             exit();
         }
     }
 }
 
 $conn->close();
-
 ?>

@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
+    <?php
+        session_start();
+        if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true || !isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+            // If not logged in or not an admin, redirect to the login page or another appropriate page
+            header("Location: index.php");
+            exit();
+        }
+        include 'navbar.php';
+    ?>
     <div class="container-shadow"></div>
     <div class="container">
         <div class="wrap">
