@@ -1,0 +1,5 @@
+RoomNumber,SuiteType,Doubles,OnePointFive
+711,712|ProjectorSuite|1|0
+713,714|ArtSuite|0|1
+715,716|VideoGameSuite|1|0
+717,718|BoardGameSuite|0|1

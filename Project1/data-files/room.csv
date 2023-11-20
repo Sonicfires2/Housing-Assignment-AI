@@ -1,5 +1,0 @@
-RoomNumber,SuiteType,Double,OnePointFive
-"711,712","ProjectorSuite",True,False
-"713,714","ArtSuite",False,True
-"715,716","VideoGameSuite",True,False
-"717,718","BoardGameSuite",False,True
