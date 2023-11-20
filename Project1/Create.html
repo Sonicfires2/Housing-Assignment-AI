@@ -32,6 +32,24 @@
             <label for="isOnEboard">Is On Eboard?</label>
             <input id="isOnEboard" type="checkbox" name="isOnEboard">
 
+            <label for="roomSize">Room Size Preference</label>
+            <select id="roomSize" name="roomSize" required>
+              <option value="Double">Double</option>
+              <option value="One-and-half">One-and-half</option>
+              <option value="Single">Single</option>
+            </select>
+    
+            <label for="suitePreference">Suite Preferences</label>
+            <select id="suitePreference" name="suitePreference" required>
+              <option value="Art">Art</option>
+              <option value="VideoGame">Video Game</option>
+              <option value="Projector">Projector</option>
+              <option value="BoardGame">Board Game</option>
+            </select>
+    
+            <label for="roomNumber">Room Number Preference</label>
+            <input id="roomNumber" type="text" name="roomNumber" required>
+    
             <input type="submit" class="button" name="submit" value="Submit">
           </form>
           <button id="signOutButton" onclick="goToUpdate(event)">Go To Update</button>
