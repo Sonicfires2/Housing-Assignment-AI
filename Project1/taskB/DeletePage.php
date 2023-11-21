@@ -15,6 +15,26 @@
           header("Location: index.php");
           exit();
       }
+
+      $server = "localhost";
+    $user = "root";
+    $password = "Ssl12345#";
+    $db = "AnimeInterestFloor";
+    $conn = new mysqli($server, $user, $password, $db);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $studentIDs = [];
+    $query = "SELECT ID FROM Students";
+    $result = $conn->query($query);
+    if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $studentIDs[] = $row['ID'];
+        }
+    }
+
       include 'navbar.php';
     ?>
     <div class="container-shadow"></div>
@@ -24,9 +44,15 @@
           <span class="headings">Delete Housing Entry</span>
         </div>
         <div id="create-housing-entry-container">
-          <form id="create-housing-entry-form" method="post" action="delete.php" onsubmit="deleteHousingEntry(event);">
-            <label for="username">School ID To Delete*</label>
-            <input type="text" name="username" required/>
+          <form id="create-housing-entry-form" method="post" action="delete.php"">
+            <label for="studentID">Select Student ID to Delete*</label>
+            <select id="studentID" name="studentID">
+                <?php foreach ($studentIDs as $id): ?>
+                    <option value="<?php echo htmlspecialchars($id); ?>">
+                        <?php echo htmlspecialchars($id); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
             <input type="submit" class="button" name="submit" value="Submit">
           </form>
           <button id="signOutButton" onclick="signOut(event)">Sign Out</button>

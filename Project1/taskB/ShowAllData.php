@@ -54,7 +54,7 @@
                     echo "<tr>
                             <td>".$row["ID"]."</td>
                             <td>".$row["Password"]."</td>
-                            <td data-content='".($row["isAdmin"] ? "True" : "False")."'>".($row["isAdmin"] ? "True" : "False")."</td>                            <td>".$row["Name"]."</td>
+                            <td data-content='".($row["isAdmin"] ? "True" : "False")."'>".($row["isAdmin"] ? "True" : "False")."</td>
                             <td>".$row["Name"]."</td>
                             <td>".$row["Seniority"]."</td>
                             <td data-content='".($row["isInEboard"] ? "True" : "False")."'>".($row["isInEboard"] ? "True" : "False")."</td>

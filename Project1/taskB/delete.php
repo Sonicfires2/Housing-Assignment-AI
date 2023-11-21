@@ -1,9 +1,8 @@
 <?php
 session_start();
-
-// Check if the user is logged in and is an admin
-if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true || !isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
-    header('Location: index.php');
+$isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'];
+if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true || !$isAdmin) {
+    header("Location: index.php");
     exit();
 }
 
@@ -19,9 +18,10 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-    $schoolID = $conn->real_escape_string($_POST['username']);
+    // Update to use 'studentID' from the form
+    $studentID = $conn->real_escape_string($_POST['studentID']);
 
-    $sql = "DELETE FROM Students WHERE ID = '$schoolID'";
+    $sql = "DELETE FROM Students WHERE ID = '$studentID'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Housing entry deleted successfully";
