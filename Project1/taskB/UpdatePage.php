@@ -44,7 +44,7 @@
                 <span class="headings">Update Housing Entry</span>
             </div>
             <div id="update-housing-entry-container">
-                <form id="update-housing-entry-form" method="post" action="update.php"">
+                <form id="update-housing-entry-form">
                     <label for="studentID">Select Student ID</label>
                     <select id="studentID" name="studentID" onchange="loadStudentData()">
                         <option value="">Select a Student ID</option>
@@ -80,16 +80,34 @@
     </div>
     <script src="form.js"></script>
     <script>
+        document.getElementById('update-housing-entry-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            var formData = new FormData(this);
+            fetch('update.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) 
+            .then(text => {
+                alert(text); 
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred'); 
+            });
+        });
+
         function loadStudentData() {
             var studentID = document.getElementById('studentID').value;
 
             if (!studentID) {
-                // Clear form fields or handle the empty selection appropriately
                 document.getElementById('year').value = '';
                 document.getElementById('attendance').value = '';
                 document.getElementById('strikes').value = '';
                 document.getElementById('isOnEboard').checked = false;
-                return; // Exit the function if no ID is selected
+                return; 
             }
 
             fetch('fetch.php?id=' + studentID)

@@ -44,7 +44,7 @@
           <span class="headings">Delete Housing Entry</span>
         </div>
         <div id="create-housing-entry-container">
-          <form id="create-housing-entry-form" method="post" action="delete.php"">
+          <form id="create-housing-entry-form">
             <label for="studentID">Select Student ID to Delete*</label>
             <select id="studentID" name="studentID">
                 <?php foreach ($studentIDs as $id): ?>
@@ -60,5 +60,26 @@
       </div>
     </div>
     <script src="form.js"></script>
+    <script>
+        document.getElementById('create-housing-entry-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            var formData = new FormData(this); 
+            fetch('delete.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) 
+            .then(text => {
+                alert(text); 
+                // this.reset(); 
+                window.location.reload();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred'); 
+            });
+        });
+    </script>
 </body>
 </html>

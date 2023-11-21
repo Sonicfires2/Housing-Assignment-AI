@@ -45,7 +45,7 @@
           <span class="headings">Delete Suite Entry</span>
         </div>
         <div id="delete-suite-entry-container">
-          <form id="delete-suite-entry-form" method="post" action="suite.php">
+          <form id="delete-suite-entry-form">
             
             <label for="suiteTypeToDelete">Suite Type to Delete</label>
             <select id="suiteTypeToDelete" name="suiteTypeToDelete" required>
@@ -62,5 +62,26 @@
       </div>
     </div>
     <script src="form.js"></script>
+    <script>
+        document.getElementById('delete-suite-entry-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+            fetch('suite.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) 
+            .then(text => {
+                alert(text);
+                location.reload();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred'); 
+                document.getElementById('responseMessage').innerText = 'An error occurred';
+            });
+        });
+    </script>
 </body>
 </html>

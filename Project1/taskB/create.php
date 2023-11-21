@@ -18,7 +18,7 @@ if ($conn->connect_error) {
 }
 
 // Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userID = $_SESSION['user_id']; // Get the logged-in user's ID
     $year = $conn->real_escape_string($_POST['year']);
     $attendance = (int) $_POST['attendance'];

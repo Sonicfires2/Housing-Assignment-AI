@@ -1,5 +1,10 @@
 # Housing-Assignment-AI
 
+If the below commands give errors off the bat, then run this first:
+1. mysql -u root -p
+2. enter your password
+3. create.sql
+
 This creates the tables
 1. mysql -u root -p AnimeInterestFloor < create.sql
 
@@ -13,6 +18,10 @@ once logged in run:
 2. quit
 3. mysql --local-infile=1 -u root -p AnimeInterestFloor < load.sql
 
+Command to start the php local development server (assuming you have php already installed)
+If you are unsure about php installation, do php -V to check
+1. php -S localhost:8000
+2. go to browser and type localhost:8000 and it will bring you to index.php
 
 General SQL commands to start,stop, and restart server on UNIX
 Start MySQL
@@ -23,7 +32,3 @@ Stop MySQL
 
 Restart MySQL
 1. sudo /usr/local/mysql/support-files/mysql.server restart
-
-Command to start the php local development server (assuming you have php already installed)
-If you are unsure about php installation, do php -V to check
-1. php -S localhost:8000

@@ -16,8 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $studentID = $conn->real_escape_string($_POST['studentID']);
     $year = $conn->real_escape_string($_POST['year']);
     $attendance = (int) $_POST['attendance'];

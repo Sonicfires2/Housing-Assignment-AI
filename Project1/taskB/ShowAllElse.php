@@ -27,22 +27,26 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Function to query and display table data
         function displayTableData($conn, $tableName, $columns) {
             $sql = "SELECT * FROM $tableName";
             $result = $conn->query($sql);
-            if ($result && $result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    foreach ($columns as $col) {
-                        echo "<td>".$row[$col]."</td>";
+            if ($result) {
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        foreach ($columns as $col) {
+                            echo "<td>".$row[$col]."</td>";
+                        }
+                        echo "</tr>";
                     }
-                    echo "</tr>";
+                } else {
+                    echo "<tr><td colspan='".count($columns)."'>No data found</td></tr>";
                 }
             } else {
-                echo "<tr><td colspan='".count($columns)."'>No data found</td></tr>";
+                echo "<tr><td colspan='".count($columns)."'>Error in query</td></tr>";
             }
         }
+        
     ?>
 
     <!-- Room Table Display -->

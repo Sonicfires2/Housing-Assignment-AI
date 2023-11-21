@@ -46,7 +46,7 @@
           <span class="headings">Create Housing Entry</span>
         </div>
         <div id="create-housing-entry-container">
-          <form id="create-housing-entry-form" method="post" action="create.php" onsubmit="return validateRoomNumber()">
+          <form id="create-housing-entry-form">
             <label for="year">Year</label>
             <select id="year" name="year" required>
               <option value="Freshman">Freshman</option>
@@ -92,6 +92,30 @@
     </div>
     <script src="form.js"></script>
     <script>
+      document.getElementById('create-housing-entry-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            if (!validateRoomNumber()) {
+                return; 
+            }
+
+            var formData = new FormData(this); 
+
+            fetch('create.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) 
+            .then(text => {
+                alert(text); 
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred');
+            });
+        });
+
       function validateRoomNumber() {
           var roomNumberInput = document.getElementById('roomNumber').value;
           var roomNumbers = roomNumberInput.split(',').map(function(num) {
