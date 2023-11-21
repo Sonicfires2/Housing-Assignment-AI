@@ -9,7 +9,8 @@
 <body>
     <?php
         session_start();
-        if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true || !isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+        $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'];
+        if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true || !$isAdmin) {
             // If not logged in or not an admin, redirect to the login page or another appropriate page
             header("Location: index.php");
             exit();
