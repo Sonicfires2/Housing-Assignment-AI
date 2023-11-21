@@ -96,6 +96,88 @@ a {
   box-shadow: 0px 30px 50px -20px #000;
 }
 
+.container-delete-room-shadow, .container-delete-room {
+  position: absolute;
+  width: 500px;
+  min-height: 400px;
+  height: fit-content;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, #29323c 0%, #3b4249 100%);
+  box-shadow: 0px 0px 50px -20px #000;
+  margin-bottom: 60px;
+}
+
+#delete-room-entry-container input {
+  width: 90%;
+  margin-left: 5%;
+} 
+
+.button-delete-room {
+  display: block;
+  width: 90%;
+  background: #aaf0d1;
+  color: #2c353e;
+  text-transform: uppercase;
+  margin-top: 1.3em;
+  padding: 12px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.container-create-room {
+  position: absolute;
+  width: 500px;
+  min-height: 400px;
+  height: fit-content;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, #29323c 0%, #3b4249 100%);
+  box-shadow: 0px 0px 50px -20px #000;
+  margin-bottom: 60px;
+}
+
+.container-create-room input {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.button-create-room {
+  display: block;
+  width: 90%;
+  background: #aaf0d1;
+  color: #2c353e;
+  text-transform: uppercase;
+  margin-top: 1.3em;
+  padding: 12px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.container-shadow {
+  box-shadow: 0px 30px 50px -20px #000;
+}
+
+.wrap {
+  padding: 20px;
+}
+
+.headingsContainer {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.headings {
+  font-size: 1.5em;
+}
+
 .wrap {
   position: relative;
   width: 400px;
