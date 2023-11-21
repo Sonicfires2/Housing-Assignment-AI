@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Suite Entry</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container-delete-suite-shadow"></div>
+    <div class="container-delete-suite">
+      <div class="wrap">
+        <div class="headingsContainer">
+          <span class="headings">Delete Suite Entry</span>
+        </div>
+        <div id="delete-suite-entry-container">
+          <form id="delete-suite-entry-form" onsubmit="deleteSuiteEntry(event);">
+            
+            <label for="suiteTypeToDelete">Suite Type to Delete</label>
+            <input id="suiteTypeToDelete" type="text" name="suiteTypeToDelete" required>
+    
+            <input type="submit" class="button" name="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
