@@ -505,7 +505,50 @@ footer .fp a:hover {
   border-bottom: none; /* Removes the border from the last row data */
 }
 
+.containerOfAllDataElse {
+  width: 95%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  background-color: #29323c;
+  box-shadow: 0px 0px 20px -10px #000;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
 
+.containerOfAllDataElse thead {
+  background: linear-gradient(90deg, #29323c 0%, #3b4249 100%);
+}
+
+.containerOfAllDataElse th {
+  padding: 15px 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.containerOfAllDataElse tbody tr {
+  transition: background 0.3s ease;
+}
+
+.containerOfAllDataElse tbody tr:hover {
+  background: #3b4249;
+}
+
+.containerOfAllDataElse td {
+  padding: 12px 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.containerOfAllDataElse tr:last-child td {
+  border-bottom: none; /* Removes the border from the last row data */
+}
 /* 
   STYLING FOR UPDATE BELOW
   STYLING THE DROP DOWN FOR CREATE 
