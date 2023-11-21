@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Room Preferences Entry</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container-delete-room-shadow"></div>
+    <div class="container-delete-room">
+        <div class="headingsContainer">
+            <span class="headings">Create Room Preferences Entry</span>
+        </div>
+        <div id="create-room-preferences-entry-container">
+            <form id="create-room-preferences-entry-form" onsubmit="createRoomPreferencesEntry(event);">
+                <label for="studentID">Student ID</label>
+                <input id="studentID" type="number" name="studentID" required>
+    
+                <label for="preferredRoomNumber">Preferred Room Number</label>
+                <input id="preferredRoomNumber" type="text" name="preferredRoomNumber" required>
+
+                <label for="preferencesID">Preferences ID</label>
+                <input id="preferencesID" type="number" name="preferencesID" required>
+    
+                <input type="submit" class="button-delete-room" name="submit" value="Create">
+            </form>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

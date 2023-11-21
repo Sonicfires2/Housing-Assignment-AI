@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Room Preferences Entry</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container-delete-room-shadow"></div>
+    <div class="container-delete-room">
+        <div class="headingsContainer">
+            <span class="headings">Delete Room Preferences Entry</span>
+        </div>
+        <div id="delete-room-preferences-entry-container">
+            <form id="delete-room-preferences-entry-form" onsubmit="deleteRoomPreferencesEntry(event);">
+                <label for="preferencesIDToDelete">Preferences ID to Delete</label>
+                <input id="preferencesIDToDelete" type="number" name="preferencesIDToDelete" required>
+    
+                <input type="submit" class="button-delete-room" name="submit" value="Delete">
+            </form>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
