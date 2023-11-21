@@ -54,10 +54,10 @@
                     echo "<tr>
                             <td>".$row["ID"]."</td>
                             <td>".$row["Password"]."</td>
-                            <td>".($row["isAdmin"] ? "True" : "False")."</td>
+                            <td data-content='".($row["isAdmin"] ? "True" : "False")."'>".($row["isAdmin"] ? "True" : "False")."</td>                            <td>".$row["Name"]."</td>
                             <td>".$row["Name"]."</td>
                             <td>".$row["Seniority"]."</td>
-                            <td>".($row["isInEboard"] ? "True" : "False")."</td>
+                            <td data-content='".($row["isInEboard"] ? "True" : "False")."'>".($row["isInEboard"] ? "True" : "False")."</td>
                             <td>".$row["SuitePreference"]."</td>
                             <td>".$row["RoomNumberPreference"]."</td>
                             <td>".$row["RoomSizePreference"]."</td>
