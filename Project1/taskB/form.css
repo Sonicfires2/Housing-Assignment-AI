@@ -37,6 +37,16 @@ a {
   box-shadow: 0px 30px 50px -20px #000;
 }
 
+#delete-suite-entry-container label {
+  width: 90%;
+  margin-left: -5%;
+}
+#suiteTypeToDelete option {
+  width: 90%;
+  background-color: transparent;
+  color: black
+}
+
 .container {
   position: absolute;
   width: 525px;
