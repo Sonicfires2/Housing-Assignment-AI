@@ -156,12 +156,12 @@ a {
 
 .container-create-assignment input{
   width: 90%;
-  left: 5%;
+  margin-left: 5%;
 } 
 
 .container-delete-assignment input{
   width: 90%;
-  left: 5%;
+  margin-left: 5%;
 } 
 
 .container-delete-assignment {
