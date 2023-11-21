@@ -96,6 +96,88 @@ a {
   box-shadow: 0px 30px 50px -20px #000;
 }
 
+.container-delete-room-shadow, .container-delete-room {
+  position: absolute;
+  width: 500px;
+  min-height: 400px;
+  height: fit-content;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, #29323c 0%, #3b4249 100%);
+  box-shadow: 0px 0px 50px -20px #000;
+  margin-bottom: 60px;
+}
+
+#delete-room-entry-container input {
+  width: 90%;
+  margin-left: 5%;
+} 
+
+.button-delete-room {
+  display: block;
+  width: 90%;
+  background: #aaf0d1;
+  color: #2c353e;
+  text-transform: uppercase;
+  margin-top: 1.3em;
+  padding: 12px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.container-create-room {
+  position: absolute;
+  width: 500px;
+  min-height: 400px;
+  height: fit-content;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: 60px;
+  background: linear-gradient(90deg, #29323c 0%, #3b4249 100%);
+  box-shadow: 0px 0px 50px -20px #000;
+  margin-bottom: 60px;
+}
+
+.container-create-room input {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.button-create-room {
+  display: block;
+  width: 90%;
+  background: #aaf0d1;
+  color: #2c353e;
+  text-transform: uppercase;
+  margin-top: 1.3em;
+  padding: 12px;
+  margin-left: 5%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.container-shadow {
+  box-shadow: 0px 30px 50px -20px #000;
+}
+
+.wrap {
+  padding: 20px;
+}
+
+.headingsContainer {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.headings {
+  font-size: 1.5em;
+}
+
 .wrap {
   position: relative;
   width: 400px;
@@ -490,36 +572,3 @@ footer .fp a:hover {
     color: #29323c;
     box-shadow: 0 5px 5px -5px #29323c;
 }
-
-nav {
-  background-color: #aaf0d1; /* Material Design primary color */
-  padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
-  display: flex;
-  justify-content: center; /* centers items horizontally */
-  align-items: center;
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #29323c;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #97a2cf; /* lighter shade for hover effect */
-}
-
-/* Additional styling if needed */
-nav a:not(:last-child) {
-  margin-right: 20px;
-}
-
-.content {
-  padding: 20px;
-  text-align: center;
-}
-
-
