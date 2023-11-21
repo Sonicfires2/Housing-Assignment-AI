@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container-create-room">
+        <div class="headingsContainer">
+        <span class="headings">Create Room Entry</span>
+        </div>
+        <div id="create-room-entry-container">
+        <form id="create-room-entry-form" onsubmit="submitRoomEntry(event);">
+            <label for="roomNumber">Room Number</label>
+            <input id="roomNumber" type="text" name="roomNumber" required>
+
+            <label for="suiteType">Suite Type</label>
+            <input id="suiteType" type="text" name="suiteType" required>
+
+            <label for="isDouble">Double Room</label>
+            <input id="isDouble" type="checkbox" name="isDouble">
+
+            <label for="isOnePointFive">One and Half Room</label>
+            <input id="isOnePointFive" type="checkbox" name="isOnePointFive">
+
+            <input type="submit" class="button-create-room" name="submit" value="Submit">
+        </form>
+        </div>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
