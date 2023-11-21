@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Assignment Entry</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container-create-assignment-shadow"></div>
+    <div class="container-create-assignment">
+        <div class="headingsContainer">
+            <span class="headings">Create Assignment Entry</span>
+        </div>
+        <div id="create-assignment-entry-container">
+            <form id="create-assignment-entry-form" onsubmit="createAssignmentsEntry(event);">
+                <label for="assignmentID">Assignment ID</label>
+                <input id="assignmentID" type="number" name="assignmentID" required>
+
+                <label for="studentID">Student ID</label>
+                <input id="studentID" type="number" name="studentID" required>
+    
+                <label for="assignmentRoomNumber">Assigned Room Number</label>
+                <input id="assignmentRoomNumber" type="text" name="assignmentRoomNumber" required>
+    
+                <input type="submit" class="button" name="submit" value="Create">
+            </form>
+        </div>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
