@@ -483,19 +483,22 @@ footer .fp a:hover {
   text-align: center;
 }
 
-.containerOfAllData td:nth-child(3):before, /* Icons for Is Admin */
-.containerOfAllData td:nth-child(6):before { /* Icons for Is Active */
-  content: '\2713'; /* Checkmark */
+.containerOfAllData td:nth-child(3)[data-content="True"]:before, 
+.containerOfAllData td:nth-child(6)[data-content="True"]:before {
+  content: '\2713'; 
   color: #aaf0d1;
   display: block;
   font-weight: bold;
   text-align: center;
 }
 
-.containerOfAllData td:nth-child(3)[data-content='False']:before,
-.containerOfAllData td:nth-child(6)[data-content='False']:before {
-  content: '\2717'; /* X symbol */
-  color: #ff4d4d; /* Red color */
+.containerOfAllData td:nth-child(3)[data-content="False"]:before,
+.containerOfAllData td:nth-child(6)[data-content="False"]:before {
+  content: '\2717'; 
+  color: #ff4d4d; 
+  display: block;
+  font-weight: bold;
+  text-align: center;
 }
 
 .containerOfAllData tr:last-child td {
