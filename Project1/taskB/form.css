@@ -473,8 +473,8 @@ footer .fp a:hover {
   text-align: center;
 }
 
-.containerOfAllData td:nth-child(3):before, /* Icons for Is Admin */
-.containerOfAllData td:nth-child(6):before { /* Icons for Is Active */
+.containerOfAllData td:nth-child(3)[data-content="True"]:before, /* Icons for Is Admin */
+.containerOfAllData td:nth-child(6)[data-content="True"]:before { /* Icons for Is Active */
   content: '\2713'; /* Checkmark */
   color: #aaf0d1;
   display: block;
@@ -482,10 +482,13 @@ footer .fp a:hover {
   text-align: center;
 }
 
-.containerOfAllData td:nth-child(3)[data-content='False']:before,
-.containerOfAllData td:nth-child(6)[data-content='False']:before {
+.containerOfAllData td:nth-child(3)[data-content="False"]:before,
+.containerOfAllData td:nth-child(6)[data-content="False"]:before {
   content: '\2717'; /* X symbol */
   color: #ff4d4d; /* Red color */
+  display: block;
+  font-weight: bold;
+  text-align: center;
 }
 
 .containerOfAllData tr:last-child td {
