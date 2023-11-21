@@ -664,3 +664,34 @@ footer .fp a:hover {
     color: #29323c;
     box-shadow: 0 5px 5px -5px #29323c;
 }
+
+nav {
+  background-color: #aaf0d1; /* Material Design primary color */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+  display: flex;
+  justify-content: center; /* centers items horizontally */
+  align-items: center;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #29323c;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #97a2cf; /* lighter shade for hover effect */
+}
+
+/* Additional styling if needed */
+nav a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}

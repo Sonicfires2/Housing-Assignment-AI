@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
+  <?php
+    session_start();
+    $isAdmin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'];
+    if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true || !$isAdmin) {
+        // If not logged in or not an admin, redirect to the login page or another appropriate page
+        header("Location: index.php");
+        exit();
+    }
+    include 'navbar.php';
+  ?>
     <div class="container-create-suit-shadow"></div>
     <div class="container-create-suite">
       <div class="wrap">
@@ -14,7 +24,7 @@
           <span class="headings">Create Suite Entry</span>
         </div>
         <div id="create-suite-entry-container">
-          <form id="create-suite-entry-form" onsubmit="submitSuiteEntry(event);">
+          <form id="create-suite-entry-form" method="post" action="suite.php"">
             
             <label for="suiteType">Suite Type</label>
             <input id="suiteType" type="text" name="suiteType" required>
