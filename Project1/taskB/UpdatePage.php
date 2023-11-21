@@ -15,6 +15,26 @@
             header("Location: index.php");
             exit();
         }
+
+        $server = "localhost";
+        $user = "root";
+        $password = "Ssl12345#";
+        $db = "AnimeInterestFloor";
+
+        $conn = new mysqli($server, $user, $password, $db);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $studentIDs = [];
+        $idQuery = "SELECT ID FROM Students";
+        $idResult = $conn->query($idQuery);
+        if ($idResult && $idResult->num_rows > 0) {
+            while ($row = $idResult->fetch_assoc()) {
+                $studentIDs[] = $row['ID'];
+            }
+        }
+
         include 'navbar.php';
     ?>
     <div class="container-shadow"></div>
@@ -24,7 +44,16 @@
                 <span class="headings">Update Housing Entry</span>
             </div>
             <div id="update-housing-entry-container">
-                <form id="update-housing-entry-form" onsubmit="updateHousingEntry(event);">
+                <form id="update-housing-entry-form" method="post" action="update.php"">
+                    <label for="studentID">Select Student ID</label>
+                    <select id="studentID" name="studentID" onchange="loadStudentData()">
+                        <option value="">Select a Student ID</option>
+                        <?php foreach ($studentIDs as $id): ?>
+                            <option value="<?php echo htmlspecialchars($id); ?>">
+                                <?php echo htmlspecialchars($id); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                     <label for="year">Update Year</label>
                     <select id="year" name="year" required>
                         <option value="Freshman">Freshman</option>
@@ -39,16 +68,45 @@
                     <label for="strikes">Update Number of Strikes</label>
                     <input id="strikes" type="number" name="strikes" min="0" max="3" required>
 
-                    <label for="isOnEboard">Are you an Eboard now</label>
+                    <label for="isOnEboard">Is Eboard Now?</label>
                     <input id="isOnEboard" type="checkbox" name="isOnEboard">
 
                     <input type="submit" class="button" name="update" value="Update">
                 </form>
-                <button id="createEntryButton" onclick="goToCreate(event)">Go To Create</button>
+                <!-- <button id="createEntryButton" onclick="goToCreate(event)">Go To Create</button> -->
                 <button id="signOutButton" onclick="signOut(event)">Sign Out</button>
             </div>
         </div>
     </div>
     <script src="form.js"></script>
+    <script>
+        function loadStudentData() {
+            var studentID = document.getElementById('studentID').value;
+
+            if (!studentID) {
+                // Clear form fields or handle the empty selection appropriately
+                document.getElementById('year').value = '';
+                document.getElementById('attendance').value = '';
+                document.getElementById('strikes').value = '';
+                document.getElementById('isOnEboard').checked = false;
+                return; // Exit the function if no ID is selected
+            }
+
+            fetch('fetch.php?id=' + studentID)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('year').value = data.Seniority || '';
+                    document.getElementById('attendance').value = data.NumberOfAttendance || 0;
+                    document.getElementById('strikes').value = data.NumberOfStrikes || 0;
+                    document.getElementById('isOnEboard').checked = data.isInEboard === '1';
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 </body>
 </html>
