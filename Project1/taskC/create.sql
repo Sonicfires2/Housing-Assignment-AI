@@ -16,8 +16,8 @@ CREATE TABLE `Students` (
     `Seniority` VARCHAR(255),
     `isInEboard` BOOLEAN NOT NULL DEFAULT 0,
     `SuitePreference` VARCHAR(255),
+    `RoomNumberPreference` VARCHAR(255),
     `RoomSizePreference` VARCHAR(255),
-    `RoomType` VARCHAR(255),
     `NumberOfAttendance` INT NOT NULL DEFAULT 0,
     `NumberOfStrikes` INT NOT NULL DEFAULT 0,
     PRIMARY KEY (`ID`)

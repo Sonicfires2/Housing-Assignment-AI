@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: dashboard.php");
             exit();
         } else {
-            $_SESSION['error'] = "Access Denied: You must be an admin to log in.";
+            $_SESSION['error'] = "Access Denied: Wrong Credentials.";
             header("Location: index.php");
             exit();
         }

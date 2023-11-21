@@ -25,8 +25,8 @@
                 <th>Class</th>
                 <th>Is Eboard</th>
                 <th>Suite Pref</th>
-                <th>Rooms Pref</th>
-                <th>Room Type</th>
+                <th>Rooms Number Pref</th>
+                <th>Room Type Pref</th>
                 <th>Points</th>
                 <th>No. of Strikes</th>
             </tr>
@@ -58,8 +58,8 @@
                         <td>".$row["Seniority"]."</td>
                         <td>".($row["isInEboard"] ? "True" : "False")."</td>
                         <td>".$row["SuitePreference"]."</td>
+                        <td>".$row["RoomNumberPreference"]."</td>
                         <td>".$row["RoomSizePreference"]."</td>
-                        <td>".$row["RoomType"]."</td>
                         <td>".$row["NumberOfAttendance"]."</td>
                         <td>".$row["NumberOfStrikes"]."</td>
                       </tr>";

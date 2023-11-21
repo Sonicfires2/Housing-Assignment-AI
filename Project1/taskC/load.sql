@@ -8,7 +8,7 @@ LOAD DATA LOCAL INFILE 'data-files/student.csv' INTO TABLE Students
   FIELDS TERMINATED BY '|' 
   LINES TERMINATED BY '\n'
   IGNORE 1 LINES
-  (ID, Password, isAdmin, Name, Seniority, isInEboard, SuitePreference, RoomSizePreference, RoomType, NumberOfAttendance, NumberOfStrikes);
+  (ID, Password, isAdmin, Name, Seniority, isInEboard, SuitePreference, RoomNumberPreference, RoomSizePreference, NumberOfAttendance, NumberOfStrikes);
 
 LOAD DATA LOCAL INFILE 'data-files/room.csv' INTO TABLE Room
   FIELDS TERMINATED BY '|' 

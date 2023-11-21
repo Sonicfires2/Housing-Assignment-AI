@@ -59,8 +59,8 @@
                             <td>".$row["Seniority"]."</td>
                             <td>".($row["isInEboard"] ? "True" : "False")."</td>
                             <td>".$row["SuitePreference"]."</td>
+                            <td>".$row["RoomNumberPreference"]."</td>
                             <td>".$row["RoomSizePreference"]."</td>
-                            <td>".$row["RoomType"]."</td>
                             <td>".$row["NumberOfAttendance"]."</td>
                             <td>".$row["NumberOfStrikes"]."</td>
                           </tr>";

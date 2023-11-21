@@ -24,9 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $attendance = (int) $_POST['attendance'];
     $strikes = (int) $_POST['strikes'];
     $isOnEboard = isset($_POST['isOnEboard']) ? 1 : 0;
+    $roomSize = $conn->real_escape_string($_POST['roomSize']);
+    $suitePreference = $conn->real_escape_string($_POST['suitePreference']);
+    $roomNumber = $conn->real_escape_string($_POST['roomNumber']);
 
     // Update query
-    $query = "UPDATE Students SET Seniority = '$year', NumberOfAttendance = $attendance, NumberOfStrikes = $strikes, isInEboard = $isOnEboard WHERE ID = '$userID'";
+    $query = "UPDATE Students SET 
+                Seniority = '$year', 
+                NumberOfAttendance = $attendance, 
+                NumberOfStrikes = $strikes, 
+                isInEboard = $isOnEboard, 
+                RoomSizePreference = '$roomSize', 
+                SuitePreference = '$suitePreference', 
+                RoomNumberPreference = '$roomNumber' 
+              WHERE ID = '$userID'";
 
     if ($conn->query($query) === TRUE) {
         echo "Record updated successfully";

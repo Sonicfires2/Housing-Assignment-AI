@@ -1,4 +1,4 @@
-studentID,password,isAdmin,name,seniority,isEboard,suitePreference,roomSizePreference,roomType,numberOfAttendance,numberOfStrikes
+studentID,password,isAdmin,name,seniority,isEboard,suitePreference,roomNumberPreference,roomSizePreference,numberOfAttendance,numberOfStrikes
 12345678|A1b2C3d4|0|AliceJohnson|Senior|1|ProjectorSuite|711,712|Double|20|1
 87654321|E5f6G7h8|1|BobSmith|Senior|1|ArtSuite|711,712|Single|18|2
 11223344|I9j0K1l2|0|CharlieBrown|Junior|1|VideoGameSuite|711,712|Double|19|1
