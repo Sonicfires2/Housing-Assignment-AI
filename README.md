@@ -1,5 +1,7 @@
 # Housing-Assignment-AI
 
+General run steps if you choose to run the project:
+
 If the below commands give errors off the bat, then run this first:
 1. mysql -u root -p
 2. enter your password

@@ -1,9 +1,24 @@
 No files to list because everything was developed on localhost.
 
+Summary of how the interface should be used. Designed around normal student users and admin users. 
+Initial loading in takes you to index.php which has a Sign In and Sign Up form. Normal students can either
+create an account or just login with their existing accounts. After logging in, depending on whether or not
+the user is an admin it will take them to a dashboard with a unique navbar. Normal students will only be 
+able to access the create page and view their individual data while admins have access to all pages. We have
+also provided a folder with picture images for proof of completion but are also happy to demonstrate it live
+to a TA or Prof whenever necessary for grading. 
+
 Individual Member Contributions:
 
 Minh Nguyen - mnguy31 - 32023510
 Jonathan Wang - jwang201 - 31791335
 Justin Tsai - jtsai14 - 31728126
 
-We all worked together for the entire milestone. We all contributed a relatively equal amount of work. 
+We all worked together for the entire milestone. We all contributed a relatively equal amount of work.
+For specifics, this was the breakdown of work:
+
+Justin: Worked on the php backend logic for database connection and some of the asynchonous functions to collect data from the databases.
+
+Jonathan: Populated the databases and created the load + create.sql forms while also helping with backend.
+
+Minh: Contributed to the frontend (html templates and css styling along with some of the javascript)

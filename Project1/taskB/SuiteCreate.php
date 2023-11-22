@@ -33,7 +33,7 @@
     
             <input type="submit" class="button" name="submit" value="Submit">
           </form>
-=        </div>
+        </div>
       </div>
     </div>
     <script>

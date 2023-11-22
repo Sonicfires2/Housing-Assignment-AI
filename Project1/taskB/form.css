@@ -687,11 +687,11 @@ footer .fp a:hover {
 }
 
 nav {
-  background-color: #aaf0d1; /* Material Design primary color */
+  background-color: #aaf0d1; 
   padding: 10px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   display: flex;
-  justify-content: center; /* centers items horizontally */
+  justify-content: center; 
   align-items: center;
 }
 
@@ -704,10 +704,9 @@ nav a {
 }
 
 nav a:hover {
-  color: #97a2cf; /* lighter shade for hover effect */
+  color: #97a2cf;
 }
 
-/* Additional styling if needed */
 nav a:not(:last-child) {
   margin-right: 20px;
 }
@@ -716,3 +715,14 @@ nav a:not(:last-child) {
   padding: 20px;
   text-align: center;
 }
+
+.anime-image-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.anime-image {
+  max-width: 100%;
+  height: auto;
+}
+
